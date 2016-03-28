@@ -1,15 +1,15 @@
 {
   "name": "awss3-deploy",
-  "version": "0.0.0",
   "description": "Deploy artefacts with aws-cli to S3",
   "main": "index.js",
   "bin": "index.js",
   "scripts": {
-    "test": "standard"
+    "test": "standard",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tlvince/awss3-deploy.git"
+    "url": "https://github.com/tlvince/awss3-deploy.git"
   },
   "keywords": [
     "aws",
@@ -27,7 +27,8 @@
   "homepage": "https://github.com/tlvince/awss3-deploy#readme",
   "dependencies": {},
   "devDependencies": {
-    "standard": "^5.4.1"
+    "standard": "^5.4.1",
+    "semantic-release": "^4.3.5"
   },
   "directories": {
     "test": "test"
