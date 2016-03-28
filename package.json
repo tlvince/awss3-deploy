@@ -1,0 +1,40 @@
+{
+  "name": "awss3-deploy",
+  "version": "0.0.0",
+  "description": "Deploy artefacts with aws-cli to S3",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tlvince/awss3-deploy.git"
+  },
+  "keywords": [
+    "aws",
+    "s3",
+    "travis",
+    "cd"
+  ],
+  "author": "Tom Vincent <git@tlvince.com> (https://tlvince.com)",
+  "engines": {
+    "node": ">=4"
+  },
+  "bugs": {
+    "url": "https://github.com/tlvince/awss3-deploy/issues"
+  },
+  "homepage": "https://github.com/tlvince/awss3-deploy#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "standard": "^5.4.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "index.js",
+    "deploy.sh"
+  ],
+  "license": "MIT"
+}
