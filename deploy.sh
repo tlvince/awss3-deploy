@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-now="$(gdate --utc --iso-8601=seconds)"
+now="$(date --utc --iso-8601=seconds)"
 
 echo "uploading"
 aws s3 cp "$LOCAL_DIR" "s3://$BUCKET/$UPLOAD_DIR-$now/" \
