@@ -45,6 +45,45 @@ deploy:
   skip_cleanup: true
 ```
 
+### S3 Permissions
+
+Your S3 bucket needs the `s3:ListBucket` permission on the bucket itself and
+`s3:{Delete,Get,Put}Object` on the bucket's contents. An example bucket policy
+might look like the following:
+
+```json
+{
+  "Version": "2016-05-03",
+  "Id": "awss3-deploy",
+  "Statement": [
+    {
+      "Sid": "1",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::[account]:user/[user]"
+      },
+      "Action": [
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::[bucket]"
+    },
+    {
+      "Sid": "2",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::[account]:user/[user]"
+      },
+      "Action": [
+        "s3:DeleteObject",
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": "arn:aws:s3:::[bucket]/*"
+    }
+  ]
+}
+```
+
 ## ITYMFAQLT
 
 > I think you might frequently ask questions like these
