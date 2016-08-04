@@ -7,9 +7,13 @@ echo "uploading"
 aws s3 cp "$LOCAL_DIR" "s3://$BUCKET/$UPLOAD_DIR-$now/" \
   --recursive \
   --exclude index.html \
+  --exclude sw.js \
   --cache-control "max-age=31557600"  # 1 year
 
 aws s3 cp "$LOCAL_DIR/index.html" "s3://$BUCKET/$UPLOAD_DIR-$now/" \
+  --cache-control "no-cache, no-store"
+
+aws s3 cp "$LOCAL_DIR/sw.js" "s3://$BUCKET/$UPLOAD_DIR-$now/" \
   --cache-control "no-cache, no-store"
 
 echo "archiving"
